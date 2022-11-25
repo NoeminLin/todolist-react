@@ -11,6 +11,7 @@ const TodoCollection = ({ todos, onToggleDown, onSave, onDelete, onChangeMode })
           onSave={({ id, title }) => { onSave?.({ id, title }) }}
           onToggleDown={(id) => { onToggleDown?.(id) }}
           onChangeMode={({ id, isEdit }) => onChangeMode({ id, isEdit })}
+          onDelete={(id) => onDelete?.(id)}
         />
       )}
     </div>
