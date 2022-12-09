@@ -51,7 +51,7 @@ const LoginPage = () => {
           onChange={(passwordInputValue) => { setPassword(passwordInputValue) }}
         />
       </AuthInputContainer>
-      <AuthButton>登入</AuthButton>
+      <AuthButton onClick={handleClick}>登入</AuthButton>
       <Link to="/signup">
         <AuthLinkText>註冊</AuthLinkText>
       </Link>
