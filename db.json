@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "title": "Learn react-router",
+      "isDone": false,
+      "id": 1
+    },
+    {
+      "title": "Learn to create custom hooks",
+      "isDone": true,
+      "id": 2
+    },
+    {
+      "title": "Learn to use context",
+      "isDone": true,
+      "id": 3
+    },
+    {
+      "title": "Learn to implement auth - yes",
+      "isDone": false,
+      "id": 4
+    },
+    {
+      "title": "Noemin 2 patch API",
+      "isDone": true,
+      "id": 5
+    },
+    {
+      "title": "create todo1",
+      "isDone": false,
+      "id": 6
+    }
+  ]
+}

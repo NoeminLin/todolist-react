@@ -9,21 +9,39 @@ import { AuthInput } from 'components';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { login } from 'api/auth';
+import Swal from 'sweetalert2';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleClick = async () => {
-    try {
-      const { success, authToken } =
-        await login({
-          username,
-          password
-        })
-    } catch (err) {
-      console.error(err)
+    if (username.length === 0) {
+      return;
     }
+    if (password.length === 0) {
+      return;
+    }
+    const { success, authToken } = await login({ username, password });
+    if (success) {
+      localStorage.setItem('authToken', authToken);
+      Swal.fire({
+        title: '登入成功',
+        icon: 'success',
+        showCancelButton: false,
+        timer: 1000,
+        position: 'top'
+      });
+      return;
+    }
+    Swal.fire({
+      title: '登入失敗',
+      icon: 'error',
+      showCancelButton: false,
+      timer: 1000,
+      position: 'top'
+    });
+
   }
 
   return (
