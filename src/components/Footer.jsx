@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
@@ -32,11 +33,16 @@ const StyledButton = styled.button`
 `;
 
 const Footer = ({ todosNumber }) => {
+  const navigation = useNavigate();
+  const handleClick = () => {
+    localStorage.removeItem('authToken');
+    navigation('/login');
+  }
   return (
     <StyledFooter>
       <p>剩餘項目數： {todosNumber}</p>
-      <StyledButton>登出</StyledButton>
-    </StyledFooter>
+      <StyledButton onClick={handleClick}>登出</StyledButton>
+    </StyledFooter >
   );
 };
 
